@@ -1,0 +1,16 @@
+<div class="posts-container row">
+    <div><a><span ng-click="postForm = true" class="button pointer"><i class="fa fa-plus"></i> Créer une news</span></a></div>
+	<ul ng-if="posts.length > 0" class="list-inline">
+		<li ng-repeat="post in posts" ng-if="post.link" class="post-item col-xs-12 col-md-4">
+			<an-post-list></an-post-list>
+		</li>
+	</ul>
+
+	<div class="ng-cloak" ng-if="posts.length < 1">
+		Aucune news enregistrée :(
+	</div>
+  
+  <div class="centered">
+    <an-post-form ng-if="postForm" class="animate-slide"></an-post-form>
+  </div>
+</div>

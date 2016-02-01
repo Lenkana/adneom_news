@@ -1,0 +1,6 @@
+<form class="add-post-form" name="addPostForm" ng-submit="savePost(post)">
+	<span class="title">Ajouter une news</span><i ng-click="postForm = !postForm" class="pointer fa fa-close pull-right"></i>
+	<input required type="text" placeholder="Titre" ng-model="post.title" /><br />
+	<input required type="url" placeholder="Lien" ng-model="post.link" /><br />
+	<input type="submit" value="Envoyer" />
+</form>

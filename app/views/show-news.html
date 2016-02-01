@@ -1,0 +1,35 @@
+<div class="show-news">
+	<div class="post-details">
+		<div class="title">
+			{{ post.title }}
+		</div>
+		<div class="link">
+			<a href="{{ post.link }}" target="_blank"> <i class="fa fa-external-link"></i> {{ post.link }}</a>
+		</div>
+		<div class="upvote">
+			<i class="fa pointer" ng-click="upvote()" ng-class="{true: 'post-upvoted fa-thumbs-up', false: 'fa-thumbs-o-up'}[postUpvoted]"></i> <span class="upvote-number">{{ post.upvotes }}</span>
+		</div>
+	</div>
+
+	<div class="comments-container">
+		<div class="title subtitle">Commentaires</div>
+		
+		<ul ng-if="post.comments.length > 0" class="comments-list list-unstyled">
+			<li class="comment-container" ng-repeat="comment in post.comments">
+				<div class="comment-author">{{ comment.author }} :</div>
+				<div class="comment-body">{{ comment.body }}</div>
+			</li>
+		</ul>
+
+		<div ng-if="post.comments.length < 1">
+			Pas encore de commentaires !
+		</div>
+
+		<form name="addCommentForm" class="form-comments" ng-submit="saveComment()">	
+			<div class="title subtitle">Ajouter un commentaire</div>
+			<input required type="text" placeholder="Pseudo" ng-model="comment.author" /><br />
+			<textarea required placeholder="Commentaire" ng-model="comment.body"></textarea><br />
+			<input type="submit" value="Envoyer" />
+		</form>
+	</div>
+</div>

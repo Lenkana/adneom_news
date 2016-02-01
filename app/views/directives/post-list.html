@@ -1,0 +1,14 @@
+<div class="post-container">
+	<div class="post-info">
+		<div class="title">
+			<a href="#/news/{{ post._id }}">{{ post.title || post.link }}</a>
+		</div>
+		<div class="link">
+			<a href="{{ post.link }}" target="_blank">{{ post.link }} <i class="fa fa-external-link"></i></a>
+		</div>
+	</div>
+	<div class="post-aside">
+		<i class="fa fa-thumbs-up"></i> <span class="nb-upvotes">{{ post.upvotes }}</span>
+		<i class="fa fa-comment"></i> <span class="nb-comments">{{ post.comments.length }}</span>
+	</div>
+</div>
